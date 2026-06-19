@@ -144,6 +144,7 @@ else:
 
 st.markdown("---")
 st.header("🎥 Recorded Videos")
+count=0
 
 video_folder = Path("saved_videos")
 
@@ -152,6 +153,8 @@ if video_folder.exists():
     videos = list(video_folder.glob("*.mp4"))
 
     if videos:
+
+        count+=1
 
         selected_video = st.selectbox(
             "Select Video",
@@ -166,6 +169,7 @@ if video_folder.exists():
 
         with open(video_path, "rb") as f:
             video_bytes = f.read()
+
 
         st.video(video_bytes)
 
@@ -189,7 +193,7 @@ with col1:
 
     st.metric(
         "Frames Saved",
-        len(frames)
+        count
     )
 
 with col2:

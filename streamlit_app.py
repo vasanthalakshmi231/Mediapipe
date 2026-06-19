@@ -193,14 +193,14 @@ with col1:
 
     st.metric(
         "Frames Saved",
-        count
+         len(frames)
     )
 
 with col2:
 
     st.metric(
         "Videos Recorded",
-        len(videos)
+        count
     )
 
 
